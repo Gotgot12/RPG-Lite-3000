@@ -1,3 +1,3 @@
-public class Potion {
+// public class Potion extends Hero {
 
-}
+// }

@@ -1,3 +1,3 @@
-public class Mage {
+public class Mage extends SpellCaster {
 
 }

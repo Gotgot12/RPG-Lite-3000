@@ -1,3 +1,3 @@
-public class Warrior {
+// public class Warrior extends Hero {
 
-}
+// }
