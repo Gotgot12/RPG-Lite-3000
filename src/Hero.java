@@ -1,10 +1,13 @@
+import java.util.ArrayList;
+
+import javafx.scene.text.Text;
+
 public abstract class Hero extends Game {
     public int weaponDamage;
     public int lifePoints;
     public int armor;
 
     public int potion;
-    public int lembas;
 
     public int arrow;
 
@@ -50,31 +53,45 @@ public abstract class Hero extends Game {
         this.arrow = arrow;
     }
 
-    public static void attack(Enemy enemy, Hero hero) {
+    public int getEfficacite() {
+        return efficacite;
+    }
+
+    public void setEfficacite(int efficacite) {
+        this.efficacite = efficacite;
+    }
+
+    public static void attack(ArrayList<Text> infoEnemyText, ArrayList<Text> infoHeroText, Enemy enemy, Hero hero) {
         if (hero.getClass().getName().equals("Hunter") && hero.getArrow() > 0) {
             hero.setArrow(hero.getArrow() - 1);
+
             System.out.println("Enemy hp : " + enemy.getLifePoints());
             System.out.println("Hero Dammage : " + hero.getWeaponDamage());
             enemy.setLifePoints(enemy.getLifePoints() - hero.getWeaponDamage());
+            infoEnemyText.get(0).setText("HP du monstre : " + Integer.toString(enemy.getLifePoints()));
+            infoHeroText.get(4).setText("Nombre de flèches : " + Integer.toString(hero.getArrow()));
             System.out.println("Enemy hp : " + enemy.getLifePoints());
-        } else if (hero.getClass().getName().equals("Hero")) {
+        } else {
             System.out.println("Enemy hp : " + enemy.getLifePoints());
             System.out.println("Hero Dammage : " + hero.getWeaponDamage());
             enemy.setLifePoints(enemy.getLifePoints() - hero.getWeaponDamage());
+            infoEnemyText.get(0).setText("HP du monstre : " + Integer.toString(enemy.getLifePoints()));
             System.out.println("Enemy hp : " + enemy.getLifePoints());
         }
 
     }
 
-    public void defend() {
+    public static void defend() {
 
     }
 
-    public static void useConsumable(Hero hero, int potion) {
+    public static void useConsumable(ArrayList<Text> infoHeroText, Hero hero, int potion) {
         if (potion > 0) {
             System.out.println("Hero HP : " + hero.getLifePoints());
             hero.setLifePoints(hero.getLifePoints() + hero.efficacite);
+            infoHeroText.get(0).setText("HP du héros : " + Integer.toString(hero.getLifePoints()));
             hero.setPotion(hero.getPotion() - 1);
+            infoHeroText.get(3).setText("Nombre de potions du héros : " + Integer.toString(hero.getPotion()));
         }
     }
 }

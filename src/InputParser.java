@@ -1,45 +1,51 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import javafx.scene.text.Text;
+
 public class InputParser {
-    public static String StartGame() {
+    // public static String StartGame() {
+    // Scanner scanner = new Scanner(System.in);
+    // String HeroesChoice = HeroesChoice(scanner);
+    // while (HeroesChoice == "False") {
+    // HeroesChoice = HeroesChoice(scanner);
+    // }
+    // return HeroesChoice;
+    // }
 
-        Scanner scanner = new Scanner(System.in);
-        String HeroesChoice = HeroesChoice(scanner);
-        while (HeroesChoice == "False") {
-            HeroesChoice = HeroesChoice(scanner);
-        }
-        return HeroesChoice;
-    }
+    // public static String HeroesChoice(Scanner scanner) {
+    // System.out.println("Quelle classe veux-tu choisir (Hunter, Warrior, Mage,
+    // Healer)? ");
+    // String HeroesClass = scanner.nextLine();
 
-    public static String HeroesChoice(Scanner scanner) {
-        System.out.println("Quelle classe veux-tu choisir (Hunter, Warrior, Mage, Healer)? ");
-        String HeroesClass = scanner.nextLine();
+    // if (HeroesClass.equals("Hunter") || HeroesClass.equals("Warrior") ||
+    // HeroesClass.equals("Mage")
+    // || HeroesClass.equals("Healer")) {
+    // return HeroesClass;
+    // } else {
+    // return "False";
+    // }
+    // }
 
-        if (HeroesClass.equals("Hunter") || HeroesClass.equals("Warrior") || HeroesClass.equals("Mage")
-                || HeroesClass.equals("Healer")) {
-            return HeroesClass;
-        } else {
-            return "False";
-        }
-    }
+    // public static void CombatChoice(ArrayList<Text> infoEnemyText,
+    // ArrayList<Text> infoHeroText, Enemy enemy,
+    // Hero hero) {
+    // Scanner scanner = new Scanner(System.in);
+    // System.out.println("Vous avez " + hero.getArrow() + " flèches.");
+    // System.out.println("Vous avez " + hero.getPotion() + " potions.");
+    // System.out.println("A = attaquer, D = défendre, P = potion");
+    // String action = scanner.nextLine();
+    // if (action.equals("A")) {
+    // Hero.attack(infoEnemyText, infoHeroText, enemy, hero);
+    // }
+    // // else if (action.equals("D")) {
 
-    public static void CombatChoice(Enemy enemy, Hero hero) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Vous avez " + hero.getArrow() + " flèches.");
-        System.out.println("Vous avez " + hero.getPotion() + " potions.");
-        System.out.println("A = attaquer, D = défendre, P = potion");
-        String action = scanner.nextLine();
-        if (action.equals("A")) {
-            Hero.attack(enemy, hero);
-        }
-        // else if (action.equals("B")) {
+    // // }
+    // else if (action.equals("P")) {
+    // Hero.useConsumable(hero, hero.getPotion());
+    // }
 
-        // }
-        else if (action.equals("P")) {
-            Hero.useConsumable(hero, hero.getPotion());
-        }
-
-    }
+    // }
 
     public static void WinChoice(Hero hero) {
         Scanner scanner = new Scanner(System.in);
